@@ -82,7 +82,7 @@ nav ul li a {
   display: none;
   font-size: 2rem;
   cursor: pointer;
-  color: white;
+  color: #ffffff;
 }
 
 /* Cacher la case à cocher */
@@ -107,7 +107,7 @@ nav ul li a {
   .nav-links {
     display: none; /* Cache les liens par défaut */
     flex-direction: column;
-    background-color: #001f3f;
+    background-color: #FFFFFF;
     position: absolute;
     top: 50px;
     right: 10px;
