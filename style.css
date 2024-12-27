@@ -1,0 +1,302 @@
+/*Alignement des éléments*/
+body {
+  font-family: "Tahoma", "Lato", sans-serif;
+  background-color: #001f3f;
+  color: white;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1 {
+  font-family: "Trebuchet MS", "Open sans", sans-serif;
+  font-size: 2.5rem;
+  color: #ffcc00;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-family: "Trebuchet MS", "Open Sans", sans-serif;
+  font-size: 2rem;
+  color: #ffcc00;
+  text-decoration: underline;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-family: "Tahoma", "Lato", sans-serif;
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+/* Paragraphes */
+p {
+  font-family: "Tahoma", "Lato", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.header {
+  text-align: center;
+  padding: auto;
+}
+
+header h3 {
+  margin-top: 5px;
+  font-size: 1.2rem;
+}
+
+/* Navigation principale */
+nav {
+  display: flex; /* Permet d'aligner les enfants du <nav> */
+  justify-content: flex-end; /* Centre les éléments horizontalement */
+  background-color: #ffffff; /* Couleur de fond */
+  padding: 10px 20px; /* Espacement interne */
+}
+
+/* Liste dans la navigation */
+nav ul {
+  display: flex; /* Aligne les <li> horizontalement */
+  list-style: none; /* Supprime les puces */
+  margin: 0; /* Supprime les marges par défaut */
+  padding: 0; /* Supprime les paddings */
+  gap: 20px; /* Ajoute de l'espace entre les liens */
+}
+
+/* Liens dans la navigation */
+nav ul li a {
+  text-decoration: none; /* Supprime le soulignement */
+  color: #001f3f; /* Couleur des liens */
+  padding: 10px 15px; /* Espacement interne pour agrandir les zones cliquables */
+  border: 1px solid transparent; /* Ajoute une bordure pour l'effet hover */
+  border-radius: 5px; /* Coins arrondis */
+  transition: all 0.3s ease; /* Transition pour les effets */
+}
+
+/* Styles du bouton hamburger */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #001f3f;
+}
+
+/* Cacher la case à cocher */
+#menu-toggle {
+  display: none;
+}
+
+/* Navigation par défaut */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+/* Mobile : Afficher le bouton hamburger */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Affiche le bouton hamburger */
+    position: relative;
+  }
+
+  .nav-links {
+    display: none; /* Cache les liens par défaut */
+    flex-direction: column;
+    background-color: #001f3f;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  /* Afficher les liens si la case à cocher est activée */
+  #menu-toggle:checked + .hamburger + .nav-links {
+    display: flex; /* Affiche les liens */
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links a {
+    color: #001f3f;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+  }
+
+  .nav-links a:hover {
+    background-color: #ffcc00;
+    color: #001f3f;
+    border-radius: 5px;
+  }
+}
+
+#projets h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.projet-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  overflow-x: auto; /* Active le défilement horizontal */
+  scroll-behavior: smooth; /* Défilement fluide */
+  padding-bottom: 10px; /* Espace pour éviter que le scroll touche le bas */
+}
+
+.projet {
+  flex: 1 1 calc(50% - 20px); /* Chaque projet occupe 1/3 de l'espace visible */
+  max-width: 400px;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden; /* Empêche l'image agrandie de déborder */
+  position: relative; /* Nécessaire pour certains effets avancés */
+}
+
+@media (max-width: 768px) {
+  .projet {
+    flex: 1 1 calc(100% - 20px); /* Une seule colonne sur petits écrans */
+  }
+}
+
+.projet h3 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.projet img {
+  width: 100%; /* Image responsive */
+  height: auto; /* Conserve les proportions */
+  border-radius: 10px;
+  margin-bottom: 10px; /* Espace entre l'image et le bouton */
+}
+
+/* Effet hover sur image */
+.projet img:hover {
+  transform: scale(1.5);
+}
+
+/* Boutons */
+.projet button {
+  background-color: white;
+  color: #001f3f;
+  border: 2px solid #ffcc00;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Effet hover sur le bouton */
+.projet button:hover {
+  background-color: #001f3f;
+  color: white;
+  font-weight: bold;
+  transform: scale(1.05);
+}
+
+#presentation {
+  background-color: #ffffff;
+  border: 2px solid #ffcc00;
+  color: #001f3f;
+  padding: 20px; /* Ajoute de l'espace interne */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#presentation h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.presentation-content {
+  display: flex;
+  align-items: center; /* Aligne verticalement les éléments */
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.presentation-content img {
+  width: 200px; /* Taille de l'image */
+  height: 200px;
+  border-radius: 50%; /* Image ronde */
+}
+
+.presentation-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: left; /* Texte aligné à gauche */
+  margin: 0; /* Supprime les marges par défaut */
+}
+
+#formation-experience {
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#formation-experience h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+footer {
+  display: flex;
+  width: 75%; /* Le footer occupera 75% de la largeur de l'écran */
+  margin: 0 auto; /* Centre le footer horizontalement */
+  justify-content: space-between; /*Espacement égal entre les sections*/
+  align-items: flex-start; /*Aligne les titres en haut*/
+  padding: 20px; /*espacement interne*/
+  flex-wrap: wrap;
+  font-size: 0.7rem;
+}
+
+footer .footer {
+  flex: 1; /* chaque section prend la même largeur*/
+  margin: 0 10px; /*Espacement horizontal entre les sections*/
+  margin-right: 10px;
+  min-width: 200px; /*Largeur minimale*/
+}
+
+footer h3 {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  text-transform: uppercase; /* Tout en majuscule pour un effet stylisé*/
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer li {
+  margin-bottom: 5px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
